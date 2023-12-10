@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/styles/default.min.css">
+    <title>Liushuotong_codefield_for_begining</title>
+    <style>
+        body{
+            background-color: #002b36; /* Solarized Dark 背景色 */
+            color: #839496; /* Solarized Dark 文字颜色 */
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+        }
+
+        pre{
+            white-space: pre-wrap;
+            margin: 10px 0;
+        }
+
+        code{
+            font-family: Consolas, monospace; /* 设置代码字体 */
+        }
+
+        a{
+            color: #268bd2; /* 超链接文本颜色 */
+            text-decoration: underline; /* 添加下划线效果 */
+        }
+
+        a:hover{
+            color: #2aa198; /* 鼠标悬停时的颜色 */
+        }
+
+        hr{
+            border: 0;
+            height: 1px;
+            background: #586e75;
+            margin: 20px 0;
+        }
+
+        pre{
+            overflow-x: auto;
+            max-width: 800px; /* 或者适当的宽度 */
+            background-color: #073642;
+            border-radius: 5px;
+            padding: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>begining_Python</h1>
+    <img src = "微信图片_20231209163222.jpg" width = "200" height = "200"/>
+    <p>
+        <a href="https://github.com/liushuotong/begining_Python"><strong>https://github.com/liushuotong/begining_Python</strong></a>        
+    </p>
+    <p>
+    <h2>Example:</h2>
+    <hr>
+    <code class="python">
+        <pre style="overflow-x: auto;">
+        from randomSet import randomSet
+        from SelectionSort import SelectionSort
+        from BucketSort import BucketSort
+        from BullonSort import BullonSort
+        from MergeSort import MergeSort
+        from QuickSort import QuickSort
+        from SortAndPrint import SortAndPrint
+        import time
+        def main():
+        """
+        Compare the given function.
+
+	Args:
+	    fuction: The function to be compared.
+
+	Returns:
+	    None
+	"""
+        def compareFuntion(fuction):
+        """
+        Compare the given function.
+
+        Args:
+            fuction: The function to be compared.
+
+        Returns:
+            None
+        """
+        print(fuction.__name__ + "Start")
+        # Print the name of the given function followed by "Start"
+        SortAndPrint(fuction)
+        # Call SortAndPrint with the given function as an argument
+        input("Press Enter to continue...")
+        # Prompt the user to press Enter to continue
+        """       
+        This code defines a function called compareFunction that takes a function as an argument.
+        It prints the name of the given function followed by "Start",
+        then calls a function called SortAndPrint with the given function as an argument.
+        Finally, it prompts the user to press Enter to continue.
+        """
+        # Compare this snippet from SortCompare.py/SelectionSort.py:
+            compareFuntion(SelectionSort)
+        # Compare this snippet from SortCompare.py/BucketSort.py:
+            compareFuntion(BucketSort)
+        # Compare this snippet from SortCompare.py/BullonSort.py:
+            compareFuntion(BullonSort)
+        # Compare this snippet from SortCompare.py/MergeSort.py:
+            compareFuntion(MergeSort)
+        # Compare this snippet from SortCompare.py/QuickSort.py:
+            compareFuntion(QuickSort)
+        # Compare finished
+        print("Sort END!")
+        input("Press Enter to continue...")
+        """
+        This code defines a main function that compares different sorting functions.
+        It prompts the user to press Enter to continue,
+        and then compares each sorting function by
+        calling the compareFunction function and passing in the sorting function as an argument.
+        After comparing all the sorting functions, it prints "Sort END!"
+        and prompts the user to press Enter to continue again.
+        """
+        if __name__ == '__main__':
+            main()
+        
+    </code>
+    </pre>
+    <hr>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/10.7.2/highlight.min.js"></script>
+    <script>
+        hljs.highlightAll();
+    </script>
+    </p>
+    <h1>begining_C</h1>
+    <img src = "微信图片_20231209163226.jpg" width = "200" height = "200"/>
+    <p>
+        <a href="https://github.com/liushuotong/begining_C"><strong>https://github.com/liushuotong/begining_C</strong></a>
+    </p>
+    <h2>Example:</h2>
+    <hr>
+    
+        <code class = "cpp">
+        <pre style="overflow-x: auto;">
+            
+            #include&lt;iostream&gt;
+            #include&lt;vector&gt;
+            #include&lt;algorithm&gt;
+            #include&lt;windows.h&gt;
+            #include&lt;iomanip&gt;
+            int main(void)
+            {
+                int m,n,i,k;
+                std::cout&lt;&lt;"input sizeof(nums):";
+                std::cin>>m;
+                int num[m];
+                for(n = 0;n &lt; m;n++){
+                    std::cin&gt;&gt;num[n];
+                }//input num[n]
+                    
+                double time2=0;
+                LARGE_INTEGER nFreq;
+                LARGE_INTEGER nBeginTime;
+                LARGE_INTEGER nEndTime;
+                std::cout&lt;&lt;"TimeCheck.begin"&lt;&lt;std::endl;&gt;
+                //remind that the TimeCheck process just began
+                QueryPerformanceFrequency(&nFreq);
+                QueryPerformanceCounter(&nBeginTime);
+                    
+                for(i = 0;i &lt; n-1;i++){
+                    for(k = i+1;k &lt; n;k++){
+                        if(num[i] &gt; num[k]) break;
+                        else continue;
+                    }
+                if(k == n) break;
+                    else{
+                        i = k;
+                        continue;
+                    }
+                }
+                //find the biggest one
+                QueryPerformanceCounter(&nEndTime);//timer end
+                    
+                time2=(double)(nEndTime.QuadPart-nBeginTime.QuadPart)/(double)nFreq.QuadPart;
+                //calculate the time to make it possible to compare with time1
+                std::cout&lt;&lt;"TimeCheck.end"&lt;&lt;std::endl;
+                std::cout&lt;&lt;"Time.check:"&lt;&lt;time2&lt;&lt;std::fixed&lt;&lt;std::setprecision(10)&lt;&lt;std::endl;
+                //output time.check to compare the different methods' time
+                std::cout&lt;&lt;"max"&lt;&lt;i+1&lt;&lt;"=" &lt;&lt;num[i]&lt;&lt;std::endl;
+                //to check the answer
+                std::vector&lt;int&gt; nums;
+                    
+                for(n = 0;n &lt; m;n++){
+                    nums.push_back(num[n]);
+                }//include vector to use vector&lt;int&gt; to process the data
+                //use for() to add element to vector&lt;int&gt; nums[m]
+                    
+                double time1=0;
+                std::cout&lt;&lt;"TimeCheck.begin"&lt;&lt;std::endl;
+                //remind that the TimeCheck process just began
+                QueryPerformanceFrequency(&nFreq);
+                QueryPerformanceCounter(&nBeginTime);
+                    
+                auto max_position = std::max_element(nums.begin(), nums.end());
+                
+                QueryPerformanceCounter(&nEndTime);
+                time1=(double)(nEndTime.QuadPart-nBeginTime.QuadPart)/(double)nFreq.QuadPart;
+                std::cout&lt;&lt;"TimeCheck.end"&lt;&lt;std::endl;
+                std::cout&lt;&lt;"Time.check:"&lt;&lt;time1&lt;&lt;std::fixed&lt;&lt;std::setprecision(10)&lt;&lt;std::endl;
+                std::cout &lt;&lt; "Max position: " &lt;&lt; std::distance(nums.begin(), max_position) + 1 &lt;&lt; std::endl;
+                std::cout &lt;&lt; "max" &lt;&lt; std::distance(nums.begin(), max_position) + 1 &lt;&lt; "="&lt;&lt;num[std::distance(nums.begin(), max_position)]&lt;&lt;std::endl;
+                //similar to the first method's annotation
+                return 0;
+                system("pause");
+                //only accessible in windows environment
+                return 0;
+            }
+
+
+        </code>
+    </pre>
+    <hr>
+    <h1>begining_html</h1>
+    <img src = "微信图片_20231209163228.jpg" width = "200" height = "200"/>
+    <p>
+        <a href="https://github.com/liushuotong/begining_html"><strong>https://github.com/liushuotong/begining_html</strong></a>        
+    </p>
+</body>
+</html>
